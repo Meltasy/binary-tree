@@ -1,26 +1,29 @@
 import { Tree } from './tree.mjs'
 
-const test = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324])
-
-const prettyPrint = (node, prefix = "", isLeft = true) => {
-  if (node === null) {
-    return
-  }
-  if (node.right !== null) {
-    prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false)
-  }
-  console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`)
-  if (node.left !== null) {
-    prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true)
-  }
+function randomArray(length) {
+  return Array.from(Array(length), () => Math.floor(Math.random() * 100) + 1)
 }
+const array = randomArray(20)
+const tree = new Tree(array)
 
-console.log(test.root)
-// console.log(prettyPrint(test.root))
-console.log(test.insert(6))
-console.log(test.insert(32))
-console.log(test.delete(8))
-console.log(test.delete(4))
-console.log(prettyPrint(test.root))
-console.log(test.find(6))
-console.log(test.find(67))
+console.log(tree.root)
+tree.prettyPrint(tree.root)
+console.log(tree.isBalanced(tree.root))
+tree.inOrder(node => console.log(node.data))
+tree.preOrder(node => console.log(node.data))
+tree.postOrder(node => console.log(node.data))
+tree.insert(52)
+tree.insert(77)
+tree.insert(1)
+tree.insert(92)
+tree.insert(99)
+tree.insert(95)
+tree.insert(94)
+tree.prettyPrint(tree.root)
+console.log(tree.isBalanced(tree.root))
+console.log(tree.rebalance(tree.root))
+tree.prettyPrint(tree.root)
+console.log(tree.isBalanced(tree.root))
+tree.inOrder(node => console.log(node.data))
+tree.preOrder(node => console.log(node.data))
+tree.postOrder(node => console.log(node.data))
