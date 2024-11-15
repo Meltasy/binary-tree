@@ -6,7 +6,6 @@ function randomArray(length) {
 const array = randomArray(20)
 const tree = new Tree(array)
 
-console.log(tree.root)
 tree.prettyPrint(tree.root)
 console.log(tree.isBalanced(tree.root))
 tree.inOrder(node => console.log(node.data))

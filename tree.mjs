@@ -199,9 +199,7 @@ class Tree {
       return true
     }
     let leftHeight = this.height(root.left)
-    console.log('leftHeight', leftHeight)
     let rightHeight = this.height(root.right)
-    console.log('rightHeight', rightHeight)
     if (
       Math.abs(leftHeight - rightHeight) <= 1 &&
       this.isBalanced(root.left) &&
