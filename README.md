@@ -7,7 +7,7 @@ The following classes and methods have been included:
 * **Tree** class to represent the binary tree
 * **Node** class to represent the nodes containing values
 * **buildTree(array)** to take an array of data and build a balanced binary tree
-* **prettyPrint** to visualize the binary tree as a simple image / diagram
+* **prettyPrint** to visualize binary tree as a simple image / diagram
 * **insert(value)** to insert given value
 * **deleteItem(value)** to delete given value, updating tree as necessary
 * **find(value)** to return node with given value
